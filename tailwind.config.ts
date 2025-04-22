@@ -14,7 +14,7 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1280px'
 			}
 		},
 		extend: {
@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom colors for Capital Hill Tours
+				"ink-black": "#000000",
+				"burnt-orange": "#BF5700",
+				"leather-brown": "#4C2F27",
+				"neutral-gray": "#F7F7F7",
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +72,19 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'display': ['"Montserrat Alternates"', 'Montserrat', 'sans-serif'],
+			},
+			lineHeight: {
+				'base': '1.5rem',
+			},
+			height: {
+				'navbar': '72px',
+			},
+			spacing: {
+				'section': '80px',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +102,27 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'carousel': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' }
+				},
+				'flip': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'100%': { transform: 'rotateY(180deg)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'carousel': 'carousel 30s linear infinite',
+				'flip': 'flip 0.6s ease-out forwards',
+				'flip-reverse': 'flip 0.6s ease-out reverse forwards',
+				'fade-in': 'fade-in 0.5s ease-in-out'
 			}
 		}
 	},
